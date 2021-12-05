@@ -15,7 +15,7 @@ public class Player2Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horiz = GetComponent<Transform>().position.x;
         float vert = Input.GetAxis("Vertical2");

@@ -15,14 +15,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horiz = GetComponent<Transform>().position.x;
         float vert = Input.GetAxis("Vertical");
         Debug.Log(vert);
 
         Vector2 newVelocity = new Vector2(0, vert);
-        rBody.velocity = newVelocity * speed.y;        
+        rBody.velocity = newVelocity * speed.y;
 
         // Restrict the player from leaving the play area
         float newY;

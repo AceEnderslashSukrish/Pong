@@ -7,21 +7,26 @@ public class BallMover : MonoBehaviour
     private Rigidbody2D rBody;
     private Vector2 speed;
     private Vector2 directionMove;
+    public GameObject ball;
+    public Vector2 spawnValue = new Vector2(0, 0);
+    public bool ballDestroyed = true;
+
+    public float startWait;
 
     // Start is called before the first frame update
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
-        //Vector2 directionMove = new Vector2(1, 0);
-        //speed = new Vector2(2, 1);
+        //directionMove = new Vector2(1, -1);
+        //speed = new Vector2(3, 5);
 
-        directionMove = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
+        directionMove = new Vector2(Random.Range(-1, 2), Random.Range(-1, 2));
 
         while (directionMove == Vector2.zero || directionMove == Vector2.down || directionMove == Vector2.up)
         {
-            directionMove = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
+            directionMove = new Vector2(Random.Range(-1, 2), Random.Range(-1, 2));
         }
-        
+
         speed = new Vector2(Random.Range(3, 5), Random.Range(3, 5));
 
         rBody.velocity = directionMove * speed;
