@@ -8,6 +8,7 @@ public class Destroyer : MonoBehaviour
     public GameObject player;
     private GameController gameControllerScript;
     public int scoreValue = 1;
+    private Transform origin;
 
     void Start()
     {
@@ -22,11 +23,12 @@ public class Destroyer : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
+        player = GetComponent<Destroyer>().player;
+        gameControllerScript.AddToScore(scoreValue, player);
+        gameControllerScript.BallCreator();
         Destroy(other);
-        ballDestroyed = true;
-        gameControllerScript.AddToScore(scoreValue);
-        
+        ballDestroyed = true;        
     }
 }

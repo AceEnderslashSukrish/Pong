@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float horiz = GetComponent<Transform>().position.x;
         float vert = Input.GetAxis("Vertical");
-        Debug.Log(vert);
+        // Debug.Log(vert);
 
         Vector2 newVelocity = new Vector2(0, vert);
         rBody.velocity = newVelocity * speed.y;

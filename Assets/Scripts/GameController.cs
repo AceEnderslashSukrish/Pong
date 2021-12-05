@@ -24,27 +24,36 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateScoreText();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (destroyerScript.ballDestroyed)
-        {
-            Instantiate(ball);
-        }
+
     }
 
-    public void AddToScore(int scoreValueToAdd)
+    public void AddToScore(int scoreValueToAdd, GameObject Player)
     {
-        if (destroyerScript.player == Player1)
+        if (Player == Player1)
         {
             score1 += scoreValueToAdd;
         }
-        else if (destroyerScript.player == Player2)
+        else if (Player == Player2)
         {
             score2 += scoreValueToAdd;
         }
+        UpdateScoreText();
+    }
+
+    private void UpdateScoreText()
+    {
+        score1Text.text = $"Player 1 Score: {score1}";
+        score2Text.text = $"Player 2 Score: {score2}";
+    }
+
+    public void BallCreator()
+    {
+        Instantiate(ball, transform.position, transform.rotation);
     }
 }

@@ -7,9 +7,11 @@ public class BallMover : MonoBehaviour
     private Rigidbody2D rBody;
     private Vector2 speed;
     private Vector2 directionMove;
-    public GameObject ball;
     public Vector2 spawnValue = new Vector2(0, 0);
-    public bool ballDestroyed = true;
+    public bool ballDestroyed = false;
+    public Destroyer destroyerScript;
+    public GameController gameControllerScript;
+    private Transform origin;
 
     public float startWait;
 
@@ -51,6 +53,6 @@ public class BallMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
