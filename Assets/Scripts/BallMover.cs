@@ -24,12 +24,12 @@ public class BallMover : MonoBehaviour
 
         directionMove = new Vector2(Random.Range(-1, 2), Random.Range(-1, 2));
 
-        while (directionMove == Vector2.zero || directionMove == Vector2.down || directionMove == Vector2.up)
+        while (directionMove == Vector2.zero || directionMove == Vector2.down || directionMove == Vector2.up || directionMove == Vector2.right || directionMove == Vector2.left)
         {
             directionMove = new Vector2(Random.Range(-1, 2), Random.Range(-1, 2));
         }
 
-        speed = new Vector2(Random.Range(3, 5), Random.Range(3, 5));
+        speed = new Vector2(Random.Range(4, 6), Random.Range(4, 6));
 
         rBody.velocity = directionMove * speed;
         

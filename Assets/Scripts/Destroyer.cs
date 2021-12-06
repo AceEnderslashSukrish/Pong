@@ -27,8 +27,21 @@ public class Destroyer : MonoBehaviour
     {
         player = GetComponent<Destroyer>().player;
         gameControllerScript.AddToScore(scoreValue, player);
-        gameControllerScript.BallCreator();
+        if (gameControllerScript.score1Text.text != "Player 1 Score: 3" && gameControllerScript.score2Text.text != "Player 2 Score: 3")
+        {
+            gameControllerScript.BallCreator();
+        }
+        
         Destroy(other);
-        ballDestroyed = true;        
+        ballDestroyed = true;
+
+        if (gameControllerScript.score1Text.text == "Player 1 Score: 3")
+        {
+            gameControllerScript.PlayerWin(gameControllerScript.Player1);
+        }
+        else if (gameControllerScript.score2Text.text == "Player 2 Score: 3")
+        {
+            gameControllerScript.PlayerWin(gameControllerScript.Player2);
+        }
     }
 }
