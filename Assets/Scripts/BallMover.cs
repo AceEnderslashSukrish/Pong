@@ -42,6 +42,11 @@ public class BallMover : MonoBehaviour
             directionMove = new Vector2(-directionMove.x, directionMove.y);
             rBody.velocity = directionMove * speed;
         }
+        else if (other.gameObject.CompareTag("PlayerSides"))
+        {
+            directionMove = new Vector2(directionMove.x, -directionMove.y);
+            rBody.velocity = directionMove * speed;
+        }
         else
         {
             directionMove = new Vector2(directionMove.x, -directionMove.y);
