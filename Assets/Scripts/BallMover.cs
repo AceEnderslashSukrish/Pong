@@ -35,26 +35,6 @@ public class BallMover : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            directionMove = new Vector2(-directionMove.x, directionMove.y);
-            rBody.velocity = directionMove * speed;
-        }
-        else if (other.gameObject.CompareTag("PlayerSides"))
-        {
-            directionMove = new Vector2(directionMove.x, -directionMove.y);
-            rBody.velocity = directionMove * speed;
-        }
-        else
-        {
-            directionMove = new Vector2(directionMove.x, -directionMove.y);
-            rBody.velocity = directionMove * speed;
-        }
-
-    }
-
     // Update is called once per frame
     void Update()
     {

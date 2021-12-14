@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2203745821415610908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,7 +94,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2203745821415610908}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 45c903fa3c43f834f93ccd09684aec7a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -146,6 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnValue: {x: 0, y: 0}
   ballDestroyed: 0
-  destroyerScript: {fileID: 0}
-  gameControllerScript: {fileID: 0}
   startWait: 0
