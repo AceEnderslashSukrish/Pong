@@ -9,8 +9,8 @@ public class BallMover : MonoBehaviour
     private Vector2 directionMove;
     public Vector2 spawnValue = new Vector2(0, 0);
     public bool ballDestroyed = false;
-    public Destroyer destroyerScript;
-    public GameController gameControllerScript;
+    private Destroyer destroyerScript;
+    private GameController gameControllerScript;
     private Transform origin;
 
     public float startWait;
